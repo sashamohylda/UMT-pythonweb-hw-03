@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Повідомлення</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo" class="logo">
+        <h1>Надіслати повідомлення</h1>
+    </header>
+    <nav>
+        <a href="/">Головна</a>
+        <a href="/message">Написати повідомлення</a>
+        <a href="/read">Читати повідомлення</a>
+    </nav>
+    <main>
+        <form action="/message" method="POST">
+            <label>Ім'я користувача:</label>
+            <input type="text" name="username" placeholder="Введіть ім'я" required>
+
+            <label>Повідомлення:</label>
+            <textarea name="message" placeholder="Введіть повідомлення" required></textarea>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </main>
+</body>
+</html>

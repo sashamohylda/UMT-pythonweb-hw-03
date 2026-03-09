@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Всі повідомлення</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo" class="logo">
+        <h1>Всі повідомлення</h1>
+    </header>
+    <nav>
+        <a href="/">Головна</a>
+        <a href="/message">Написати повідомлення</a>
+        <a href="/read">Читати повідомлення</a>
+    </nav>
+    <main>
+        {% if messages %}
+            {% for time, data in messages.items() %}
+            <div class="message-card">
+                <span class="time">{{ time }}</span>
+                <strong>{{ data.username }}</strong>
+                <p>{{ data.message }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Повідомлень ще немає.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
